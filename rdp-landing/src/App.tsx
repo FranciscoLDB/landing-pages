@@ -34,6 +34,7 @@ const LandingPage = () => {
             <div className="hidden md:flex items-center space-x-8">
               <a href="#inicio" className="hover:text-amber-500 transition">Início</a>
               <a href="#servicos" className="hover:text-amber-500 transition">Serviços</a>
+              <a href="#atuacao" className="hover:text-amber-500 transition font-medium">Área de Atuação</a>
               <a href="#diferenciais" className="hover:text-amber-500 transition">Diferenciais</a>
               <a 
                 href={whatsappLink}
@@ -64,37 +65,43 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="inicio" className="relative h-[600px] flex items-center justify-center bg-slate-900">
-        {/* Background Image Placeholder */}
+      <section id="inicio" className="relative h-[650px] flex items-center justify-center bg-slate-900">
         <div className="absolute inset-0 z-0 opacity-40">
-           <img 
-             src={babImg}
-             alt="Guincho na estrada" 
-             className="w-full h-full object-cover"
-           />
+          {/* Use o import da imagem que configuramos antes */}
+          <img 
+            src={babImg} 
+            alt="Guincho RDP atendendo em Curitiba e Litoral" 
+            className="w-full h-full object-cover"
+          />
         </div>
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
-            Problemas com seu veículo? <br />
-            <span className="text-amber-500">A RDP Guinchos resolve.</span>
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+            Guincho 24h em <span className="text-amber-500">Curitiba, Região e Litoral</span>
           </h1>
-          <p className="text-xl text-gray-200 mb-8">
-            Há 17 anos oferecendo socorro rápido, segurança e preço justo.
-            Atendemos leves, utilitários e emergências 24h.
+          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+            Há 17 anos sendo a solução em socorro automotivo. Atendimento rápido em 
+            Matinhos, Praia de Leste, Pontal do PR e toda a Grande Curitiba.
           </p>
+          
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <a 
               href={whatsappLink}
               className="bg-amber-500 hover:bg-amber-600 text-slate-900 text-lg px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:scale-105 flex items-center justify-center gap-2"
             >
-              <Phone /> CHAMAR AGORA
+              <Phone size={20} /> CHAMAR AGORA
+            </a>
+            <a 
+              href="#atuacao"
+              className="bg-slate-700 hover:bg-slate-600 text-white text-lg px-8 py-4 rounded-full font-bold shadow-lg transition flex items-center justify-center gap-2"
+            >
+              <MapPin size={20} /> ÁREA DE ATUAÇÃO
             </a>
             <a 
               href="#servicos"
               className="bg-white hover:bg-gray-100 text-slate-900 text-lg px-8 py-4 rounded-full font-bold shadow-lg transition"
             >
-              Ver Serviços
+              Nossos Serviços
             </a>
           </div>
         </div>
@@ -178,6 +185,79 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Seção de Área de Atuação */}
+      <section id="atuacao" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Onde Atendemos</h2>
+            <div className="w-24 h-1 bg-amber-500 mx-auto rounded"></div>
+            <p className="mt-4 text-gray-600 text-lg">
+              Cobertura completa com rapidez no Litoral e na Capital.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1: Litoral */}
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+              <div className="flex items-center gap-3 mb-6">
+                <MapPin className="text-amber-500" size={28} />
+                <h3 className="text-xl font-bold text-slate-800">Litoral Paranaense</h3>
+              </div>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Matinhos</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Praia de Leste</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Pontal do Paraná</li>
+                <li className="flex items-center gap-2 font-medium text-slate-900 italic mt-2 underline decoration-amber-500">Atendimento 24h na região</li>
+              </ul>
+            </div>
+
+            {/* Card 2: Curitiba */}
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
+              <div className="flex items-center gap-3 mb-6">
+                <MapPin className="text-amber-500" size={28} />
+                <h3 className="text-xl font-bold text-slate-800">Curitiba e Região</h3>
+              </div>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Curitiba (Todos os bairros)</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> São José dos Pinhais</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-amber-500 rounded-full"></div> Rodovias (BR-277 e Contornos)</li>
+                <li className="flex items-center gap-2 font-medium text-slate-900 italic mt-2 underline decoration-amber-500">Pronta resposta em rodovias</li>
+              </ul>
+            </div>
+
+            {/* NOVO Card 3: Viagens e Cotações */}
+            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-700 shadow-xl transform md:-translate-y-2">
+              <div className="flex items-center gap-3 mb-6">
+                <Truck className="text-amber-500" size={28} />
+                <h3 className="text-xl font-bold text-white">Viagens & Longa Distância</h3>
+              </div>
+              <p className="text-gray-300 mb-6">
+                Precisa levar seu veículo para outra cidade ou estado? Realizamos transportes planejados com total segurança.
+              </p>
+              <div className="space-y-4">
+                <div className="bg-slate-800 p-4 rounded-lg border border-slate-600">
+                  <p className="text-amber-500 font-bold text-sm uppercase mb-1">Solicite agora:</p>
+                  <p className="text-white text-lg font-semibold italic">Cotações para Viagens</p>
+                </div>
+                <a 
+                  href={whatsappLink}
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 py-3 rounded-xl font-bold transition flex items-center justify-center gap-2"
+                >
+                  Fazer Orçamento
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Mensagem de Rodapé da Seção */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-500 text-sm">
+              * Atendimento sujeito a disponibilidade e condições de tráfego. Consulte prazos para viagens programadas.
+            </p>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Footer Stripe */}
       <section className="bg-amber-500 py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
